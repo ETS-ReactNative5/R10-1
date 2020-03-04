@@ -11,6 +11,7 @@ import {
   Image,
   ScrollView,
   StyleSheet,
+  ActivityIndicator,
 } from 'react-native';
 import styles from './styles';
 
