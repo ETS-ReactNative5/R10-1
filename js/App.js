@@ -1,8 +1,16 @@
+import {NavigationContainer} from '@react-navigation/native';
 import React, {Component} from 'react';
-import {View, Text} from 'react-native';
-import About from './screens/About';
+import {ApolloProvider} from '@apollo/react-hooks';
+import RootStack from './navigation';
+import {client} from './config/api';
 export default class App extends Component {
   render() {
-    return <About />;
+    return (
+      <ApolloProvider client={client}>
+        <NavigationContainer>
+          <RootStack />
+        </NavigationContainer>
+      </ApolloProvider>
+    );
   }
 }
