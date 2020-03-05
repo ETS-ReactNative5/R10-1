@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 import gql from 'graphql-tag';
 import {Query} from '@apollo/react-components';
 import {ActivityIndicator} from 'react-native';
+import {FavesContext} from '../../context/FavesContext';
 
 const GET_ALL_SESSIONS = gql`
   {
@@ -11,10 +12,7 @@ const GET_ALL_SESSIONS = gql`
       description
       location
       speaker {
-        bio
-        image
-        name
-        url
+        id
       }
       title
       startTime
@@ -32,10 +30,15 @@ class ScheduleContainer extends Component {
           return (
             console.log(data),
             (
-              <Schedule
-                navigation={this.props.navigation}
-                sessions={data.allSessions}
-              />
+              <FavesContext.Consumer>
+                {faveIds => (
+                  <Schedule
+                    navigation={this.props.navigation}
+                    sessions={data.allSessions}
+                    faveIds={faveIds}
+                  />
+                )}
+              </FavesContext.Consumer>
             )
           );
         }}

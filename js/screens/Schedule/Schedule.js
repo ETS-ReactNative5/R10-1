@@ -9,56 +9,50 @@ import {
   SectionList,
 } from 'react-native';
 import {formatSessionData} from './../../lib/helper';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
-Item = ({session, navigation}) => {
+import styles from './styles';
+
+Item = ({session, navigation, faveIds}) => {
+  // console.log(faveIds);
   return (
     <TouchableOpacity
       onPress={() => {
-        navigation.navigate('Session');
+        console.log(session);
+        navigation.navigate('Session', {sessionInfo: session});
       }}>
       <View>
         <Text>{session.title}</Text>
-        <Text>{session.location}</Text>
+        <View style={styles.faveLocation}>
+          <Text>{session.location}</Text>
+          {faveIds.faveIds.includes(session.id) ? (
+            <MaterialCommunityIcons name="heart" color="red" />
+          ) : null}
+        </View>
       </View>
     </TouchableOpacity>
   );
 };
 
-const Schedule = ({navigation, sessions}) => {
+const Schedule = ({navigation, sessions, faveIds}) => {
   const sortedSchedule = formatSessionData(sessions);
   console.log(sortedSchedule);
 
   return (
     <ScrollView>
-      <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+      <View>
         <SectionList
           style={{}}
           sections={sortedSchedule}
           renderItem={({item}) => (
-            <Item session={item} navigation={navigation} />
+            <Item session={item} navigation={navigation} faveIds={faveIds} />
           )}
           renderSectionHeader={({section: {title}}) => (
-            <Text>{moment(title).format('h:mm a')}</Text>
+            <Text style={styles.scheduleTitle}>
+              {moment(title).format('h:mm a')}
+            </Text>
           )}
         />
-
-        <TouchableOpacity
-          onPress={
-            () => {
-              navigation.navigate('Session');
-            } // because name="Session" in navigation index.js
-          }>
-          <Text>some text</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          onPress={
-            () => {
-              navigation.navigate('Speaker');
-            } // because name="Session" in navigation index.js
-          }>
-          <Text>Got to Speaker</Text>
-        </TouchableOpacity>
-        <Text>Schedule Screen</Text>
       </View>
     </ScrollView>
   );
