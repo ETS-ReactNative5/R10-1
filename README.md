@@ -4,9 +4,9 @@ A hybrid mobile application for an upcoming developer conference called R10, bui
 
 ## App Images
 
-<img src="./js/assets/images/read_me_screenshots/about_screen_android.png" width="50">
-<img src="./js/assets/images/read_me_screenshots/home_screen_ios.png" width="50">
-<img src="./js/assets/images/read_me_screenshots/session_screen_ios.png" width="50">
+<img src="./js/assets/images/read_me_screenshots/about_screen_android.png" width="200">
+<img src="./js/assets/images/read_me_screenshots/home_screen_ios.png" width="200">
+<img src="./js/assets/images/read_me_screenshots/session_screen_ios.png" width="200">
 
 ## Installation Instructions
 
