@@ -108,15 +108,15 @@ const Drawer = createDrawerNavigator();
 const DrawerNav = () => {
   return (
     <Drawer.Navigator
-      drawerOptions={{
-        activeTintColor: 'white',
-        inactiveTintColor: '#CACACA',
+      drawerContentOptions={{
+        activeTintColor: '#9963ea',
+        inactiveTintColor: '#999',
         labelStyle: {
           fontSize: 11,
           fontFamily: 'Montserrat',
         },
         style: {
-          backgroundColor: 'black',
+          backgroundColor: 'white',
         },
       }}
       screenOptions={({route}) => ({
