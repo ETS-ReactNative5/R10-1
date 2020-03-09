@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
     padding: 15,
     alignSelf: 'center',
   },
-  buttonText: {
+  buttonCustomText: {
     color: 'white',
     fontWeight: '600',
     justifyContent: 'center',
