@@ -21,28 +21,34 @@ const GradientHeader = props => (
 
 const MenuButton = props => {
   console.log(props);
-  //if android && if schedule screen
-  // Platform.OS === 'android' ? (
+  let {navigation, route} = props;
+
   return (
     <MaterialCommunityIcons
-      name={Platform.OS === 'android' ? 'menu' : 'chevron-left'}
+      name={route.name === 'Session' ? 'chevron-left' : 'menu'}
       color="white"
       size={25}
       style={{marginLeft: 10}}
-      onPress={() => props.navigation.toggleDrawer()}
+      onPress={() => navigation.toggleDrawer()}
     />
   );
-  // ) : null;
 };
 
-export const sharedScreenOptions = props => ({
-  headerBackTitleVisible: false,
-  header: props => <GradientHeader {...props} />,
-  headerStyle: {
-    backgroundColor: 'transparent',
-  },
+export const sharedScreenOptions = props => {
+  console.log(props);
+  return {
+    headerBackTitleVisible: false,
+    header: props => <GradientHeader {...props} />,
+    headerStyle: {
+      backgroundColor: 'transparent',
+    },
 
-  ...Platform.select({
-    android: {headerLeft: () => <MenuButton navigation={props.navigation} />},
-  }),
-});
+    ...Platform.select({
+      android: {
+        headerLeft: () => (
+          <MenuButton route={props.route} navigation={props.navigation} />
+        ),
+      },
+    }),
+  };
+};
