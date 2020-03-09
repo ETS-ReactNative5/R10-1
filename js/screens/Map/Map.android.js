@@ -1,10 +1,11 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import {View} from 'react-native';
+import CustomText from '../../lib/CustomText/CustomText';
 
 const Maps = () => {
   return (
     <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>This is a map</Text>
+      <CustomText>This is a map</CustomText>
     </View>
   );
 };

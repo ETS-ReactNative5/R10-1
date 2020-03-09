@@ -1,4 +1,5 @@
 import AsyncStorage from '@react-native-community/async-storage';
+import PropTypes from 'prop-types';
 
 export const addFave = faveId => {
   try {
@@ -27,4 +28,12 @@ export const showFaves = async () => {
   } catch (error) {
     throw error;
   }
+};
+
+addFave.propTypes = {
+  faveIds: PropTypes.string,
+};
+
+removeFave.propTypes = {
+  faveIds: PropTypes.string,
 };

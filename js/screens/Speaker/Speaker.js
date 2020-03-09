@@ -1,11 +1,12 @@
 import React from 'react';
-import {Text, View, Image, Linking} from 'react-native';
+import {View, Image, Linking} from 'react-native';
+import CustomText from '../../lib/CustomText/CustomText';
 import styles from './styles';
 import GradientButton from '../../components/GradientButton';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import PropTypes from 'prop-types';
 
 const Speaker = ({speaker, navigation}) => {
-  console.log(speaker);
   return (
     <View style={styles.container}>
       <View style={styles.titleContainer}>
@@ -16,12 +17,12 @@ const Speaker = ({speaker, navigation}) => {
           style={{marginLeft: 10}}
           onPress={() => navigation.goBack()}
         />
-        <Text style={styles.title}>About the Speaker</Text>
+        <CustomText style={styles.title}>About the Speaker</CustomText>
       </View>
       <View style={styles.textContainer}>
         <Image style={styles.image} source={{uri: `${speaker.image}`}} />
-        <Text style={styles.name}>{speaker.name}</Text>
-        <Text style={styles.bio}>{speaker.bio}</Text>
+        <CustomText style={styles.name}>{speaker.name}</CustomText>
+        <CustomText style={styles.bio}>{speaker.bio}</CustomText>
 
         <GradientButton
           text="Read more on Wikipedia"
@@ -43,3 +44,8 @@ const Speaker = ({speaker, navigation}) => {
 };
 
 export default Speaker;
+
+Speaker.propTypes = {
+  speaker: PropTypes.object,
+  navigation: PropTypes.object,
+};

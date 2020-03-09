@@ -1,12 +1,14 @@
 import React from 'react';
-import {Text} from 'react-native';
+import CustomText from '../../lib/CustomText/CustomText';
 import ScheduleList from '../../components/ScheduleList';
 import styles from './styles';
+import PropTypes from 'prop-types';
 
 const Faves = ({sessions, navigation, faveIds}) => {
-  console.log(navigation);
   return faveIds.length === 0 ? (
-    <Text style={styles.text}>You haven't faved any sessions yet</Text>
+    <CustomText style={styles.text}>
+      You haven't faved any sessions yet
+    </CustomText>
   ) : (
     <ScheduleList
       sessions={sessions}
@@ -17,3 +19,9 @@ const Faves = ({sessions, navigation, faveIds}) => {
 };
 
 export default Faves;
+
+Faves.propTypes = {
+  sessions: PropTypes.array,
+  faveIds: PropTypes.array,
+  navigation: PropTypes.object,
+};

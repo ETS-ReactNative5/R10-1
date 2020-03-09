@@ -11,7 +11,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 
 const ScheduleStack = createStackNavigator();
 
-const ScheduleStackScreens = props => {
+const ScheduleStackScreens = () => {
   return (
     <ScheduleStack.Navigator
       initialRouteName="Schedule"
@@ -41,7 +41,7 @@ const ScheduleStackScreens = props => {
 
 const FavesStack = createStackNavigator();
 
-const FavesStackScreens = props => {
+const FavesStackScreens = () => {
   return (
     <FavesStack.Navigator
       initialRouteName="Faves"
@@ -70,7 +70,7 @@ const FavesStackScreens = props => {
 
 const MapStack = createStackNavigator();
 
-const MapStackScreens = props => {
+const MapStackScreens = () => {
   return (
     <MapStack.Navigator screenOptions={sharedScreenOptions}>
       <MapStack.Screen
@@ -88,7 +88,7 @@ const MapStackScreens = props => {
 
 const AboutStack = createStackNavigator();
 
-const AboutStackScreens = props => {
+const AboutStackScreens = () => {
   return (
     <AboutStack.Navigator screenOptions={sharedScreenOptions}>
       <AboutStack.Screen
@@ -105,7 +105,7 @@ const AboutStackScreens = props => {
 };
 
 const Drawer = createDrawerNavigator();
-const DrawerNav = props => {
+const DrawerNav = () => {
   return (
     <Drawer.Navigator
       drawerOptions={{

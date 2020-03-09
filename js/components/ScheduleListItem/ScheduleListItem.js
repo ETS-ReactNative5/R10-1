@@ -1,5 +1,6 @@
 import React from 'react';
-import {Text, View, TouchableHighlight} from 'react-native';
+import {View, TouchableHighlight} from 'react-native';
+import CustomText from '../../lib/CustomText/CustomText';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import PropTypes from 'prop-types';
 import styles from './styles';
@@ -13,9 +14,9 @@ Item = ({session, navigation, faveIds}) => {
           : null;
       }}>
       <View style={styles.container}>
-        <Text style={styles.title}>{session.title}</Text>
+        <CustomText style={styles.title}>{session.title}</CustomText>
         <View style={styles.faveLocation}>
-          <Text style={styles.location}>{session.location}</Text>
+          <CustomText style={styles.location}>{session.location}</CustomText>
           {faveIds.includes(session.id) ? (
             <MaterialCommunityIcons name="heart" color="red" />
           ) : null}

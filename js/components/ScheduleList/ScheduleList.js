@@ -1,14 +1,14 @@
 import React from 'react';
 import moment from 'moment';
 import PropTypes from 'prop-types';
-import {Text, SectionList} from 'react-native';
+import {SectionList} from 'react-native';
+import CustomText from '../../lib/CustomText/CustomText';
 import ScheduleListItem from '../ScheduleListItem';
 import {formatSessionData} from './../../lib/helper';
 import styles from './styles';
 
 const ScheduleList = ({navigation, sessions, faveIds}) => {
   const sortedSchedule = formatSessionData(sessions);
-  console.log(typeof navigation, typeof session, typeof faveIds);
 
   return (
     <SectionList
@@ -22,9 +22,9 @@ const ScheduleList = ({navigation, sessions, faveIds}) => {
         />
       )}
       renderSectionHeader={({section: {title}}) => (
-        <Text style={styles.scheduleTitle}>
+        <CustomText style={styles.scheduleTitle}>
           {moment(title).format('h:mm a')}
-        </Text>
+        </CustomText>
       )}
     />
   );

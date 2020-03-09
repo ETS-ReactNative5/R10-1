@@ -1,9 +1,11 @@
 import React from 'react';
 import moment from 'moment';
-import {Text, View, Image, TouchableOpacity} from 'react-native';
+import {View, Image, TouchableOpacity} from 'react-native';
+import CustomText from '../../lib/CustomText/CustomText';
 import styles from './styles';
 import GradientButton from '../../components/GradientButton';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import PropTypes from 'prop-types';
 
 const Session = ({
   route,
@@ -19,19 +21,23 @@ const Session = ({
     <View style={styles.container}>
       <View style={styles.infoContainer}>
         <View style={styles.faveLocation}>
-          <Text style={styles.location}>{sessionInfo.location}</Text>
+          <CustomText style={styles.location}>
+            {sessionInfo.location}
+          </CustomText>
           {faveIds.includes(sessionInfo.id) ? (
             <MaterialCommunityIcons name="heart" color="red" />
           ) : null}
         </View>
-        <Text style={styles.title}>{sessionInfo.title}</Text>
-        <Text style={styles.startTime}>
+        <CustomText style={styles.title}>{sessionInfo.title}</CustomText>
+        <CustomText style={styles.startTime}>
           {moment(sessionInfo.startTime).format('h:mm a')}
-        </Text>
-        <Text style={styles.description}>{sessionInfo.description}</Text>
+        </CustomText>
+        <CustomText style={styles.description}>
+          {sessionInfo.description}
+        </CustomText>
         {speakerInfo ? (
           <View>
-            <Text style={styles.presentedBy}>Presented By: </Text>
+            <CustomText style={styles.presentedBy}>Presented By: </CustomText>
             <View>
               <TouchableOpacity
                 style={styles.presenterContainer}
@@ -44,7 +50,9 @@ const Session = ({
                   style={styles.speakerImage}
                   source={{uri: `${speakerInfo.image}`}}
                 />
-                <Text style={styles.speakerName}>{speakerInfo.name}</Text>
+                <CustomText style={styles.speakerName}>
+                  {speakerInfo.name}
+                </CustomText>
               </TouchableOpacity>
             </View>
           </View>
@@ -72,3 +80,12 @@ const Session = ({
 };
 
 export default Session;
+
+Session.propTypes = {
+  route: PropTypes.object,
+  navigation: PropTypes.object,
+  speakerInfo: PropTypes.object,
+  faveIds: PropTypes.array,
+  addFave: PropTypes.func,
+  removeFave: PropTypes.func,
+};

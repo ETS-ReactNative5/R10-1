@@ -3,7 +3,6 @@ import MapView, {Marker} from 'react-native-maps';
 
 const Maps = () => {
   return (
-    // <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
     <MapView
       style={{height: '100%', width: '100%'}}
       initialRegion={{
