@@ -11,9 +11,9 @@ class FavesProvider extends Component {
   }
 
   componentDidMount() {
-    this.getFavedSessionIds();
+    this.showFaves();
   }
-  getFavedSessionIds = async () => {
+  showFaves = async () => {
     try {
       const currentFaves = await showFaves();
       const ids = currentFaves.map(fave => fave[0]);
@@ -24,16 +24,12 @@ class FavesProvider extends Component {
   };
   addFave = async faveId => {
     try {
-      console.log('hello');
       const newFave = await addFave(faveId);
 
       if (newFave) {
         this.setState({faveIds: [...this.state.faveIds, newFave.id]});
       }
-      this.getFavedSessionIds();
-      // const newFaveId = newFave[0];
-      // const newFaves = this.state.faveIds.push(newFaveId);
-      // this.setState({faveIds: newFaves});
+      this.showFaves();
     } catch (error) {
       throw error;
     }
@@ -41,7 +37,7 @@ class FavesProvider extends Component {
   removeFave = async faveId => {
     try {
       await removeFave(faveId);
-      this.getFavedSessionIds();
+      this.showFaves();
     } catch (error) {}
   };
 
