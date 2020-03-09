@@ -5,11 +5,12 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   infoContainer: {
-    borderBottomColor: 'grey',
+    borderBottomColor: '#e6e6e6',
     borderBottomWidth: 1,
   },
   location: {
     fontSize: 16,
+    color: '#999',
   },
   faveLocation: {
     flexDirection: 'row',
@@ -22,6 +23,8 @@ const styles = StyleSheet.create({
   startTime: {
     paddingTop: 10,
     paddingBottom: 10,
+    color: '#cf392a',
+    fontWeight: '500',
   },
   description: {
     fontSize: 16,
@@ -46,17 +49,6 @@ const styles = StyleSheet.create({
     paddingBottom: 20,
     flexDirection: 'row',
     alignItems: 'center',
-  },
-  favesButton: {
-    backgroundColor: 'purple',
-    marginTop: 30,
-    borderRadius: 40,
-    padding: 15,
-    alignSelf: 'center',
-  },
-  buttonText: {
-    color: 'white',
-    fontWeight: '600',
   },
 });
 

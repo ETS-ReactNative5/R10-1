@@ -1,30 +1,21 @@
 import React from 'react';
 import {FavesContext} from '../../context/FavesContext';
 import Session from './Session';
-import gql from 'graphql-tag';
-import {ActivityIndicator} from 'react-native';
+import Loader from '../../components/Loader';
+import {GET_SPEAKER} from '../../queries/queries';
+
 import {Query} from '@apollo/react-components';
 
-const GET_SPEAKER = gql`
-  query($id: ID!) {
-    Speaker(id: $id) {
-      image
-      name
-      bio
-      url
-    }
-  }
-`;
 class SessionContainer extends React.Component {
   render() {
-    console.log(this.props);
     return (
       <Query
         query={GET_SPEAKER}
-        variables={{id: this.props.route.params.sessionInfo.speaker.id}}>
+        variables={{
+          id: this.props.route.params.sessionInfo.speaker.id,
+        }}>
         {({loading, error, data}) => {
-          console.log(data);
-          if (loading) return <ActivityIndicator />;
+          if (loading) return <Loader />;
           if (error) return `Error: ${error.message}`;
           return (
             <FavesContext.Consumer>
@@ -46,4 +37,3 @@ class SessionContainer extends React.Component {
   }
 }
 export default SessionContainer;
-// export default Session;
