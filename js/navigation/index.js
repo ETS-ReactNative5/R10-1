@@ -1,11 +1,11 @@
 import React from 'react';
-import BottomTabNav from './BottomTabNav';
+import MainScreens from './Navigation';
 import {createStackNavigator} from '@react-navigation/stack';
 import SpeakerModal from '../screens/Speaker';
 const RootStack = createStackNavigator();
 const RootStackScreens = props => (
   <RootStack.Navigator mode="modal" headerMode="none">
-    <RootStack.Screen name="BottomTab" component={BottomTabNav} />
+    <RootStack.Screen name="Main" component={MainScreens} />
     <RootStack.Screen name="Speaker" component={SpeakerModal} />
   </RootStack.Navigator>
 );
