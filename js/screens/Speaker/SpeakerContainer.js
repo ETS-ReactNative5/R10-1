@@ -13,4 +13,3 @@ class SpeakerContainer extends React.Component {
 }
 
 export default SpeakerContainer;
-// export default Speaker;
