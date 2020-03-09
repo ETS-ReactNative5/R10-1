@@ -29,7 +29,11 @@ const MenuButton = props => {
       color="white"
       size={25}
       style={{marginLeft: 10}}
-      onPress={() => navigation.toggleDrawer()}
+      onPress={() =>
+        route.name !== 'Session'
+          ? navigation.toggleDrawer()
+          : navigation.goBack()
+      }
     />
   );
 };
