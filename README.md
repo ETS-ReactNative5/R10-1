@@ -14,22 +14,30 @@ Use the commands below to run R10 in in your local environment:
 
 ### Installation
 
-Install dependencies:
+### Install dependencies:
+
 `yarn install`
-Install pods for IOS:
+
+### Install pods for IOS:
+
 `cd ios && pod install`
 
 ### Run iOS
 
 In project root directory:
+
 `react-native run-ios`
+
 or
+
 `yarn run ios`
 
 ### Run Android
 
 `react-native run-android`
+
 or
+
 `yarn run android`
 
 ## Technologies Used
