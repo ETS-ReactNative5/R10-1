@@ -13,18 +13,15 @@ class ScheduleContainer extends Component {
           if (loading) return <Loader />;
           if (error) return `Error! ${error.message}`;
           return (
-            console.log(data),
-            (
-              <FavesContext.Consumer>
-                {faveIds => (
-                  <Schedule
-                    navigation={this.props.navigation}
-                    sessions={data.allSessions}
-                    faveIds={faveIds.faveIds}
-                  />
-                )}
-              </FavesContext.Consumer>
-            )
+            <FavesContext.Consumer>
+              {faveIds => (
+                <Schedule
+                  navigation={this.props.navigation}
+                  sessions={data.allSessions}
+                  faveIds={faveIds.faveIds}
+                />
+              )}
+            </FavesContext.Consumer>
           );
         }}
       </Query>

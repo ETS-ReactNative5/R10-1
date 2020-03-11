@@ -1,12 +1,11 @@
 import React from 'react';
 import {View, Image, ScrollView} from 'react-native';
-import CustomText from '../../lib/CustomText/CustomText';
+import CustomText from '../../components/CustomText/CustomText';
 import styles from './styles';
 import Conduct from '../../components/Conduct';
 import PropTypes from 'prop-types';
 
 export default About = ({conducts}) => {
-  console.log(conducts);
   return (
     <ScrollView>
       <View style={styles.container}>

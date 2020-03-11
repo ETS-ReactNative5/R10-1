@@ -2,7 +2,7 @@ import React from 'react';
 import moment from 'moment';
 import PropTypes from 'prop-types';
 import {SectionList} from 'react-native';
-import CustomText from '../../lib/CustomText/CustomText';
+import CustomText from '../CustomText/CustomText';
 import ScheduleListItem from '../ScheduleListItem';
 import {formatSessionData} from './../../lib/helper';
 import styles from './styles';

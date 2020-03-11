@@ -1,5 +1,5 @@
 import React from 'react';
-import CustomText from '../../lib/CustomText/CustomText';
+import CustomText from '../../components/CustomText/CustomText';
 import ScheduleList from '../../components/ScheduleList';
 import styles from './styles';
 import PropTypes from 'prop-types';

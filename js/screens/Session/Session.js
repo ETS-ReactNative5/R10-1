@@ -1,7 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 import {View, Image, TouchableOpacity} from 'react-native';
-import CustomText from '../../lib/CustomText/CustomText';
+import CustomText from '../../components/CustomText/CustomText';
 import styles from './styles';
 import GradientButton from '../../components/GradientButton';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';

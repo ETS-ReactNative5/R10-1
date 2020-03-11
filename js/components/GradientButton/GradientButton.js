@@ -2,7 +2,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import React from 'react';
 import PropTypes from 'prop-types';
 import {TouchableOpacity} from 'react-native';
-import CustomText from '../../lib/CustomText/CustomText';
+import CustomText from '../CustomText/CustomText';
 import styles from './styles';
 
 const GradientButton = ({text, onPress}) => {

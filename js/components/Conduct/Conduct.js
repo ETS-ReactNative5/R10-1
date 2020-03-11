@@ -1,6 +1,6 @@
 import React from 'react';
 import {TouchableOpacity, Animated, Easing, Text} from 'react-native';
-import CustomText from '../../lib/CustomText/CustomText';
+import CustomText from '../../components/CustomText/CustomText';
 import styles from './styles';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 

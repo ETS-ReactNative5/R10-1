@@ -1,6 +1,6 @@
 import React from 'react';
 import {View, TouchableHighlight} from 'react-native';
-import CustomText from '../../lib/CustomText/CustomText';
+import CustomText from '../CustomText/CustomText';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import PropTypes from 'prop-types';
 import styles from './styles';
